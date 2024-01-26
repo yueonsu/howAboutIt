@@ -5,7 +5,7 @@
  * @param themeNum
  */
 const getKeyEscapeSchedule = (areaNum, revDay, themeNum) => {
-    const url = `http://localhost:8080/api/escape/keyEscape?areaNum=${areaNum}&revDay=${revDay}&themeNum=${themeNum}`;
+    const url = `/api/escape/keyEscape?areaNum=${areaNum}&revDay=${revDay}&themeNum=${themeNum}`;
     const method = 'GET';
     const body = null;
     myFetch(url, method, body, makeKeyEscapeSchedule);
@@ -37,7 +37,7 @@ const makeKeyEscapeSchedule = (data) => {
     const timesTableBody = document.querySelector('#times-body');
     times.forEach(timeObj => {
         const time = timeObj['time'];
-        const isAvailable = timeObj['isAvailable'] ? "<strong style='color: blue;'>가능</strong>" : "<strong style='color: red;'>불가</strong>"
+        const isAvailable = timeObj['isAvailable'] === "true" ? "<strong style='color: blue;'>가능</strong>" : "<strong style='color: red;'>불가</strong>"
         const timeTableTr = document.createElement('tr');
         timeTableTr.innerHTML = `<td>${time}</td><td>${isAvailable}</td>`;
         timesTableBody.append(timeTableTr);

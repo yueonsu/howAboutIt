@@ -15,11 +15,4 @@ public class MvcConfiguration implements WebMvcConfigurer {
         registry.addResourceHandler("/**")
                 .addResourceLocations("classpath:/templates/", "classpath:/static/");
     }
-
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("http://localhost:8080", "http://3.104.201.229:8080", "http://dvs:8080")
-                .allowedMethods("GET", "POST", "PUT", "DELETE");
-    }
 }
