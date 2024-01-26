@@ -5,7 +5,7 @@
  * @param themeNum
  */
 const getKeyEscapeSchedule = (areaNum, revDay, themeNum) => {
-    fetch(`http://localhost:5100/key_escape?area_num=${areaNum}&rev_days=${revDay}&theme_num=${themeNum}`)
+    fetch(`http://3.104.201.229:5100/key_escape?area_num=${areaNum}&rev_days=${revDay}&theme_num=${themeNum}`)
         .then(res => res.json())
         .then(data => {
             if (data) {
